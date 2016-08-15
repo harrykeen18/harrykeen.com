@@ -1,0 +1,37 @@
+{% load static %}
+    <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- <h1 class="page-header">Projects
+                    <small>cronological</small>
+                </h1> -->
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-6"> 
+            
+            <form action="{% url 'home:contact' %}" method="post">
+                {% csrf_token %}
+                <label>Name</label><br />
+                <input type="text" name="name"placeholder="Name" /><br />
+                <br />
+                <label>Email</label><br />
+                <input type="text" name="email" placeholder="email@gmail.com" /><br />  <br />
+
+<!--                 <label>I am interested in:</label><br /><br>
+                <input id="checkbox" type="checkbox" name="update" value="updated" checked="checked"><div id="checkbox">Staying updated</div><br>
+                <input id="checkbox" type="checkbox" name="local" value="local"><div id="checkbox">Uploading a guide</div><br>
+                <input id="checkbox" type="checkbox" name="invest" value="invest"><div id="checkbox">Investing!</div><br>
+                <br> -->
+
+                <label>Message</label><br />
+                <textarea name="message" type="text" rows="10" cols="30" class="message-field" placeholder="You're awesome." ></textarea><br />
+                <br />
+
+                <input type="submit" value="Submit" />
+            </form>
+
+        </div>
+
+    </div>
+
