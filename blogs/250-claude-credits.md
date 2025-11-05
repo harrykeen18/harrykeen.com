@@ -1,5 +1,3 @@
-# $250 free Claude credits
-
 > We recently launched Claude Code on the web, a new way to delegate coding tasks directly from your browser...we're giving you $250 in free usage credits exclusively for Claude Code on the web—separate from your Pro plan limits.
 
 
