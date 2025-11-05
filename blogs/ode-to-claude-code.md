@@ -1,3 +1,5 @@
+# Addiction & Claude code
+
 I'm addicted to Claude Code.
 
 I feel like I’ve got a superpower when I’m using it, I turn it on and I can pour weeks worth of work in to a furious few hours. I actually complete side projects because tough challenges that needed serious thinking time I just didn’t have, can be overcome with a few prompts. My mental model for what’s possible has totally shifted.
