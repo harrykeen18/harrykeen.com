@@ -96,18 +96,24 @@ function renderBlogList() {
 // Load and render a specific blog post
 async function loadBlogPost(filename) {
     try {
+        // Find metadata from the blogPosts array (loaded from manifest)
+        const post = blogPosts.find(p => p.filename === filename);
+        if (!post) {
+            throw new Error('Post not found in manifest');
+        }
+
+        // Fetch the markdown content
         const response = await fetch(`blogs/${filename}`);
         const markdownContent = await response.text();
-        const { frontMatter, markdown } = parseFrontMatter(markdownContent);
 
         // Render markdown to HTML
-        const htmlContent = marked.parse(markdown);
+        const htmlContent = marked.parse(markdownContent);
 
         // Display the blog post
         content.innerHTML = `
             <article>
-                <h1>${frontMatter.title || filename.replace('.md', '')}</h1>
-                <span class="post-date">${formatDate(frontMatter.date)}</span>
+                <h1>${post.title}</h1>
+                <span class="post-date">${formatDate(post.date)}</span>
                 <div class="post-content">
                     ${htmlContent}
                 </div>
