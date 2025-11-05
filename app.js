@@ -42,50 +42,20 @@ function parseFrontMatter(content) {
     return { frontMatter: {}, markdown: content };
 }
 
-// Fetch the list of blog posts from the blogs directory
+// Fetch the list of blog posts from the manifest
 async function loadBlogList() {
     try {
-        // Fetch the blogs directory listing from GitHub
-        const response = await fetch('blogs/');
-        const text = await response.text();
+        // Fetch the blog manifest file
+        const response = await fetch('blogs/manifest.json');
+        const data = await response.json();
 
-        // Parse HTML to extract .md file links
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-        const links = Array.from(doc.querySelectorAll('a'))
-            .map(a => a.getAttribute('href'))
-            .filter(href => href && href.endsWith('.md'));
-
-        // Fetch each blog post to get its metadata
-        const posts = await Promise.all(
-            links.map(async (filename) => {
-                try {
-                    const response = await fetch(`blogs/${filename}`);
-                    const content = await response.text();
-                    const { frontMatter } = parseFrontMatter(content);
-
-                    return {
-                        filename,
-                        title: frontMatter.title || filename.replace('.md', ''),
-                        date: frontMatter.date || new Date().toISOString().split('T')[0],
-                        ...frontMatter
-                    };
-                } catch (e) {
-                    console.error(`Error loading ${filename}:`, e);
-                    return null;
-                }
-            })
-        );
-
-        // Filter out failed loads and sort by date (newest first)
-        blogPosts = posts
-            .filter(post => post !== null)
-            .sort((a, b) => new Date(b.date) - new Date(a.date));
+        // Sort by date (newest first)
+        blogPosts = data.posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
         renderBlogList();
     } catch (error) {
         console.error('Error loading blog list:', error);
-        blogList.innerHTML = '<p class="loading">No blog posts found. Add .md files to the blogs/ directory.</p>';
+        blogList.innerHTML = '<p class="loading">No blog posts found. Add .md files to the blogs/ directory and update manifest.json.</p>';
     }
 }
 
@@ -126,18 +96,24 @@ function renderBlogList() {
 // Load and render a specific blog post
 async function loadBlogPost(filename) {
     try {
+        // Find metadata from the blogPosts array (loaded from manifest)
+        const post = blogPosts.find(p => p.filename === filename);
+        if (!post) {
+            throw new Error('Post not found in manifest');
+        }
+
+        // Fetch the markdown content
         const response = await fetch(`blogs/${filename}`);
         const markdownContent = await response.text();
-        const { frontMatter, markdown } = parseFrontMatter(markdownContent);
 
         // Render markdown to HTML
-        const htmlContent = marked.parse(markdown);
+        const htmlContent = marked.parse(markdownContent);
 
         // Display the blog post
         content.innerHTML = `
             <article>
-                <h1>${frontMatter.title || filename.replace('.md', '')}</h1>
-                <span class="post-date">${formatDate(frontMatter.date)}</span>
+                <h1>${post.title}</h1>
+                <span class="post-date">${formatDate(post.date)}</span>
                 <div class="post-content">
                     ${htmlContent}
                 </div>
