@@ -11,10 +11,10 @@ There are loads of transcription apps out there but they are either cloud-based 
 
 LocalScribe solves all three using Whisper for transcription and Apple Intelligence for summarisation — everything happens locally on your Mac with code and release attestation available on GitHub.
 
-- Download: https://localscribe.app/
-- Source: https://github.com/harrykeen18/localscribe
-- Attestation: https://github.com/harrykeen18/localscribe/releases/tag/v0.2.2-beta
+- [Download from here](https://localscribe.app/)
+- [Source code for review](https://github.com/harrykeen18/localscribe)
+- [Attestation](https://github.com/harrykeen18/localscribe/releases/tag/v0.2.2-beta)
 
 This is a beta release - would love feedback - lot's of rough edges e.g. only works on meetings over a few minutes atm.
 
-For even better summarisation quality, there's an experimental Ollama version: https://github.com/harrykeen18/localscribe/releases/tag/v0.2.2-experimental
+For even better summarisation quality, there's an [experimental Ollama version](https://github.com/harrykeen18/localscribe/releases/tag/v0.2.2-experimental).
