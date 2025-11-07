@@ -67,7 +67,7 @@ function renderBlogList() {
     }
 
     blogList.innerHTML = blogPosts.map(post => `
-        <a href="#" class="blog-link" data-filename="${post.filename}">
+        <a href="#/post/${post.filename}" class="blog-link" data-filename="${post.filename}">
             <div class="blog-title">${post.title}</div>
             <div class="blog-date">${formatDate(post.date)}</div>
         </a>
@@ -75,11 +75,7 @@ function renderBlogList() {
 
     // Add click handlers
     document.querySelectorAll('.blog-link').forEach(link => {
-        link.addEventListener('click', async (e) => {
-            e.preventDefault();
-            const filename = link.getAttribute('data-filename');
-            await loadBlogPost(filename);
-
+        link.addEventListener('click', (e) => {
             // Update active state
             document.querySelectorAll('.blog-link').forEach(l => l.classList.remove('active'));
             link.classList.add('active');
@@ -139,5 +135,42 @@ function formatDate(dateString) {
     });
 }
 
+// Handle hash changes for navigation
+function handleHashChange() {
+    const hash = window.location.hash;
+
+    // Parse hash like #/post/filename.md
+    if (hash.startsWith('#/post/')) {
+        const filename = hash.replace('#/post/', '');
+        loadBlogPost(filename);
+
+        // Update active state in sidebar
+        document.querySelectorAll('.blog-link').forEach(link => {
+            if (link.getAttribute('data-filename') === filename) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
+}
+
 // Initialize the app
-loadBlogList();
+async function initApp() {
+    await loadBlogList();
+
+    // Check if there's a hash in the URL on page load
+    if (window.location.hash) {
+        handleHashChange();
+    } else if (blogPosts.length > 0) {
+        // If no hash, load the first (most recent) post
+        const firstPost = blogPosts[0];
+        window.location.hash = `/post/${firstPost.filename}`;
+    }
+}
+
+// Listen for hash changes (back/forward navigation, direct hash changes)
+window.addEventListener('hashchange', handleHashChange);
+
+// Start the app
+initApp();
