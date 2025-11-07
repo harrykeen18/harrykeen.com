@@ -2,10 +2,10 @@ On device, macOS meeting transcription and summarisation app - https://localscri
 
 I built LocalScribe because I couldn't find a meeting transcription app that checked all the boxes for privacy and transparency:
 
-✓ 100% on-device processing (no cloud APIs)
-✓ Source available with attestable releases (SHA-256 checksums)
-✓ Captures both mic + system audio (ScreenCaptureKit)
-✓ Actually works with Zoom, Google Meet, Teams etc.
+- 100% on-device processing (no cloud APIs)
+- Source available with attestable releases (SHA-256 checksums)
+- Captures both mic + system audio (ScreenCaptureKit)
+- Actually works with Zoom, Google Meet, Teams etc.
 
 There are loads of transcription apps out there but they are either cloud-based - send you private meeting transcript to a random third party closed-source - unverifiable code only capture the mic input - struggles to capture meetings well i.e. when using headphones.
 
