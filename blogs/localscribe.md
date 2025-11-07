@@ -7,7 +7,10 @@ I built LocalScribe because I couldn't find a meeting transcription app that che
 - Captures both mic + system audio (ScreenCaptureKit)
 - Actually works with Zoom, Google Meet, Teams etc.
 
-There are loads of transcription apps out there but they are either cloud-based - send you private meeting transcript to a random third party closed-source - unverifiable code only capture the mic input - struggles to capture meetings well i.e. when using headphones.
+There are loads of transcription apps out there but they are either
+- cloud-based - send you private meeting transcript to a random third party
+- closed-source - unverifiable code
+- only capture the mic input - struggles to capture meetings well i.e. when using headphones.
 
 LocalScribe solves all three using Whisper for transcription and Apple Intelligence for summarisation — everything happens locally on your Mac with code and release attestation available on GitHub.
 
