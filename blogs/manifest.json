@@ -1,19 +1,14 @@
 {
   "posts": [
     {
-      "filename": "ode-to-claude-code.md",
-      "title": "Addiction and Claude Code",
-      "date": "2025-11-01"
-    },
-    {
-      "filename": "250-claude-credits.md",
-      "title": "$250 Claude credits",
-      "date": "2025-11-05"
-    },
-    {
       "filename": "localscribe.md",
       "title": "LocalScribe",
       "date": "2025-11-07"
+    },
+    {
+      "filename": "ai-smarter-or-dumber.md",
+      "title": "Is AI making us smarter or dumber?",
+      "date": "2025-11-10"
     }
   ]
 }
