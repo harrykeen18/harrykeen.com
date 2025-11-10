@@ -6,7 +6,7 @@ I first noticed the “tech dumbification effect” years ago while relying too 
 
 So does this model actually transfer across to AI. No, I don’t think it does. Sure there are lots of ways to rely on AI that will directly lead to you missing out on doing the hard yards, but the additive effect you get turns it to a net gain. Such as:
 - Taking on tasks I would have had to outsource to an expert such as accountant and therefore learning about that specialism in the process. Dependant on the task clearly you might have to outsource, but starting from an educated position is a HUGE benefit.
-- Coding. Man, these tools are great at coding now. In the hands of a well intentioned amateur, despite what people say, I really think you can produce pro level code. I have 100% taken on more ambitious tasks and learnt loads through the process.
+- Coding. Wow, these tools are great at coding now. In the hands of a patient user, I really think you can produce pro level code. I have 100% taken on more ambitious tasks and learnt loads through the process.
 - Asking stupid questions. I always thought of myself quite good at asking stupid questions without really caring what people think. But, I admit, there is a limit. I can ask the dumbest question to Claude/ChatGPT and it gives me ZERO judgement. I’ve got nothing to prove to ChatGPT so I can ask its whatever I want and it will comfortingly tell me that “that’s a great question”.
 - Just a better search. I’m tired of wading through ad optimised pages or scrolling past 3/4’s of a page of ads on Google to get to the actual information you want.
 
