@@ -6,40 +6,37 @@ A simple, elegant blog site built with vanilla HTML, CSS, and JavaScript. Deploy
 
 - Clean, minimalist design with vanilla ice cream colored background
 - Responsive layout with mobile hamburger menu
-- Markdown blog posts with YAML front matter
+- Markdown blog posts with centralized manifest
 - Automatic blog list sorted by date (newest first)
 - Client-side rendering, no build step required
 
 ## How to Add a New Blog Post
 
-1. Create a new `.md` file in the `blogs/` directory
-2. Add YAML front matter at the top with title and date:
+1. Create a new `.md` file in the `blogs/` directory with your content
+2. Add an entry to `blogs/manifest.json`:
 
-```markdown
----
-title: Your Blog Post Title
-date: 2025-01-15
----
-
-# Your Blog Post Title
-
-Your content goes here...
+```json
+{
+  "filename": "your-post.md",
+  "title": "Your Blog Post Title",
+  "date": "2025-01-15"
+}
 ```
 
-3. Write your post content in markdown
-4. Commit and push to GitHub:
+3. Commit and push to GitHub:
 
 ```bash
-git add blogs/your-post.md
+git add blogs/your-post.md blogs/manifest.json
 git commit -m "Add new blog post"
 git push
 ```
 
-5. Your blog will automatically update on GitHub Pages!
+4. Your blog will automatically update on GitHub Pages!
 
-## Front Matter Fields
+## Manifest Fields
 
-Required fields:
+Required fields for each post in `manifest.json`:
+- `filename`: The markdown file name in the `blogs/` directory
 - `title`: The title of your blog post
 - `date`: Publication date in YYYY-MM-DD format
 
