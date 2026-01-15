@@ -23,25 +23,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Parse front matter from markdown content
-function parseFrontMatter(content) {
-    const frontMatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
-    const match = content.match(frontMatterRegex);
-
-    if (match) {
-        try {
-            const frontMatter = jsyaml.load(match[1]);
-            const markdown = match[2];
-            return { frontMatter, markdown };
-        } catch (e) {
-            console.error('Error parsing front matter:', e);
-            return { frontMatter: {}, markdown: content };
-        }
-    }
-
-    return { frontMatter: {}, markdown: content };
-}
-
 // Fetch the list of blog posts from the manifest
 async function loadBlogList() {
     try {
