@@ -16,6 +16,8 @@ Scoping is everything. Miss a detail or make an assumption you don't communicate
 
 Security still feels like an afterthought. It surprised me that it's not baked into the technical decisions Claude makes by default. You need to be asking the right questions and double-checking the implementation yourself.
 
+Time. Claude seems to occasionally ber living in the past. I think this is due to the inherent batch training process for LLMs and when they were trained. This manifests with using old packages and did cause some faiyl considerable re-working occasionally as updating packages mid way through the major feature development could have knock on effects that needed extra time to reconcile.
+
 ## On models and tokens
 
 I used the full range—Haiku, Sonnet, and Opus. Opus produces noticeably better results but drains your weekly token allowance fast. I found myself reaching for Opus more and more as the project progressed, then dropping back to Sonnet when tokens ran low. There's a real skill to managing this.
