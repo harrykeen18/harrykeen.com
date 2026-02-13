@@ -79,3 +79,40 @@ Your site will be available at `https://yourusername.github.io/repositoryname/`
 - [js-yaml](https://github.com/nodeca/js-yaml) - YAML front matter parser
 - Roboto font from Google Fonts
 - Pure vanilla JavaScript, no frameworks
+
+# Furture blog ideas
+
+The new PM paradigm
+- Everyones talking about text to code, but no one is really talking about code to text
+- Hacking multiple options out in front of the engineers
+
+The fight for determinism in a non-deterministic world 	
+
+Ai is the hive mind we’ve all been waiting for
+
+The long term survival of the human race race is in non biological form
+
+Custom software
+- Is the build vs buy in the enterprise paradigm over?
+- A lot of chat about “buy” being dead
+- Clearly not true
+    - Out of core skill set
+    -
+- Opportunity
+
+Is it possible to build a 1 person billion dollar company
+
+Is it possible to build a 1 man saas product
+
+Running a local llm server
+
+Reminded of the woman from that pathé documentary who hand painted crockery and then got moved in to the factory
+
+Holy Hell. Claude code is good.
+
+Am I getting dumber or smarter with AI.
+- Strain to think about how to communicate and details can be kind of ignored as AI can fill in the details.
+
+Stienbeck and AI
+
+Memories are what define us, LLMs are good at language, but don’t remember in the same way as us. Really this is the crux of AGI. We need to focus on memory. Kind of like mind 1 vs. mind 2 of Kauffman.
