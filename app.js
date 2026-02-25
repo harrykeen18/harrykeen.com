@@ -6,6 +6,7 @@ const sidebar = document.getElementById('sidebar');
 const hamburger = document.getElementById('hamburger');
 const blogList = document.getElementById('blog-list');
 const content = document.getElementById('content');
+const meLink = document.getElementById('me-link');
 
 // Hamburger menu toggle
 hamburger.addEventListener('click', () => {
@@ -22,6 +23,26 @@ document.addEventListener('click', (e) => {
         }
     }
 });
+
+// Render the "Me" / About page
+function renderMePage() {
+    content.innerHTML = `
+        <div class="about">
+            <h1></h1>
+            <p>Hi. I'm Harry. This is my personal blog where I share my highly opionated, often poorly informed, sometimes well informed thoughts that are unaffilliated with anyone else other than me.</p>
+        </div>
+    `;
+
+    // Update active states
+    document.querySelectorAll('.blog-link').forEach(l => l.classList.remove('active'));
+    meLink.classList.add('active');
+
+    // Close sidebar on mobile
+    if (window.innerWidth <= 768) {
+        sidebar.classList.remove('open');
+        hamburger.classList.remove('active');
+    }
+}
 
 // Fetch the list of blog posts from the manifest
 async function loadBlogList() {
@@ -55,7 +76,7 @@ function renderBlogList() {
     `).join('');
 
     // Add click handlers
-    document.querySelectorAll('.blog-link').forEach(link => {
+    document.querySelectorAll('.blog-link[data-filename]').forEach(link => {
         link.addEventListener('click', (e) => {
             // Update active state
             document.querySelectorAll('.blog-link').forEach(l => l.classList.remove('active'));
@@ -120,8 +141,9 @@ function formatDate(dateString) {
 function handleHashChange() {
     const hash = window.location.hash;
 
-    // Parse hash like #/post/filename.md
-    if (hash.startsWith('#/post/')) {
+    if (hash === '#/me' || hash === '') {
+        renderMePage();
+    } else if (hash.startsWith('#/post/')) {
         const filename = hash.replace('#/post/', '');
         loadBlogPost(filename);
 
@@ -143,10 +165,9 @@ async function initApp() {
     // Check if there's a hash in the URL on page load
     if (window.location.hash) {
         handleHashChange();
-    } else if (blogPosts.length > 0) {
-        // If no hash, load the first (most recent) post
-        const firstPost = blogPosts[0];
-        window.location.hash = `/post/${firstPost.filename}`;
+    } else {
+        // Default to the Me/About page
+        window.location.hash = '/me';
     }
 }
 
