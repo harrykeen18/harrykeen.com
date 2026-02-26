@@ -29,7 +29,7 @@ function renderMePage() {
     content.innerHTML = `
         <div class="about">
             <h1></h1>
-            <p>Hi. I'm Harry. This is my personal blog where I share my highly opionated, often poorly informed, sometimes well informed thoughts that are unaffilliated with anyone else other than me.</p>
+            <p>Hi. I'm Harry. This is my personal blog where I share my highly opionated, sometimes well informed thoughts and ideas that are unaffilliated with anyone else other than me.</p>
         </div>
     `;
 
