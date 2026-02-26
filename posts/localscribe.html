@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry Keen</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>LocalScribe - Harry Keen</title>
+    <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     <div class="container">
         <aside class="sidebar" id="sidebar">
             <nav id="me-nav">
-                <a href="/" class="blog-link active">
+                <a href="/" class="blog-link">
                     <div class="blog-title">About Me</div>
                 </a>
             </nav>
@@ -29,16 +29,37 @@
                 <a href="/posts/build-vs-buy-llm-era.html" class="blog-link"><div class="blog-title">Is the build vs. buy for software now dead?</div><div class="blog-date">January 15, 2026</div></a>
                 <a href="/posts/building-saas-with-ai-2025.html" class="blog-link"><div class="blog-title">Can you build a production level SaaS product with AI in 2025?</div><div class="blog-date">December 20, 2025</div></a>
                 <a href="/posts/ai-smarter-or-dumber.html" class="blog-link"><div class="blog-title">Is AI making us smarter or dumber?</div><div class="blog-date">November 10, 2025</div></a>
-                <a href="/posts/localscribe.html" class="blog-link"><div class="blog-title">LocalScribe</div><div class="blog-date">November 7, 2025</div></a>
+                <a href="/posts/localscribe.html" class="blog-link active"><div class="blog-title">LocalScribe</div><div class="blog-date">November 7, 2025</div></a>
             </nav>
         </aside>
 
         <main class="content">
-            <div class="about">
-            <p>Hi. I'm Harry. This is my personal blog where I share my highly opinionated, sometimes well informed thoughts and ideas that are unaffiliated with anyone else other than me.</p>
-<p>"You are an aggressive, interrupt-driven power user"
-~Claude Code /insights on me~</p>
-        </div>
+            <article>
+                <h1>LocalScribe</h1>
+                <span class="post-date">November 7, 2025</span>
+                <div class="post-content">
+                    <p>On device, macOS meeting transcription and summarisation app - https://localscribe.app/</p>
+<p>I built LocalScribe because I couldn't find a meeting transcription app that checked all the boxes for privacy and transparency:</p>
+<ul>
+<li>100% on-device processing (no cloud APIs)</li>
+<li>Source available with attestable releases (SHA-256 checksums)</li>
+<li>Captures both mic + system audio (ScreenCaptureKit)</li>
+<li>Actually works with Zoom, Google Meet, Teams etc.</li>
+</ul>
+<p>There are loads of transcription apps out there but they are either
+- cloud-based - send you private meeting transcript to a random third party
+- closed-source - unverifiable code
+- only capture the mic input - struggles to capture meetings well i.e. when using headphones.</p>
+<p>LocalScribe solves all three using Whisper for transcription and Apple Intelligence for summarisation — everything happens locally on your Mac with code and release attestation available on GitHub.</p>
+<ul>
+<li><a href="https://localscribe.app/">Download from here</a></li>
+<li><a href="https://github.com/harrykeen18/localscribe">Source code for review</a></li>
+<li><a href="https://github.com/harrykeen18/localscribe/releases/tag/v0.2.2-beta">Attestation</a></li>
+</ul>
+<p>This is a beta release - would love feedback - lot's of rough edges e.g. only works on meetings over a few minutes atm.</p>
+<p>For even better summarisation quality, there's an <a href="https://github.com/harrykeen18/localscribe/releases/tag/v0.2.2-experimental">experimental Ollama version</a>.</p>
+                </div>
+            </article>
         </main>
     </div>
 

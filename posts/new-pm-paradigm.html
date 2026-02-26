@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The new product management paradigm - Harry Keen</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <nav id="me-nav">
+                <a href="/" class="blog-link">
+                    <div class="blog-title">About Me</div>
+                </a>
+            </nav>
+            <h2>Posts</h2>
+            <nav id="blog-list">
+                <a href="/posts/new-pm-paradigm.html" class="blog-link active"><div class="blog-title">The new product management paradigm</div><div class="blog-date">February 23, 2026</div></a>
+                <a href="/posts/build-vs-buy-llm-era.html" class="blog-link"><div class="blog-title">Is the build vs. buy for software now dead?</div><div class="blog-date">January 15, 2026</div></a>
+                <a href="/posts/building-saas-with-ai-2025.html" class="blog-link"><div class="blog-title">Can you build a production level SaaS product with AI in 2025?</div><div class="blog-date">December 20, 2025</div></a>
+                <a href="/posts/ai-smarter-or-dumber.html" class="blog-link"><div class="blog-title">Is AI making us smarter or dumber?</div><div class="blog-date">November 10, 2025</div></a>
+                <a href="/posts/localscribe.html" class="blog-link"><div class="blog-title">LocalScribe</div><div class="blog-date">November 7, 2025</div></a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <article>
+                <h1>The new product management paradigm</h1>
+                <span class="post-date">February 23, 2026</span>
+                <div class="post-content">
+                    <p>Everyone's talking about text to code. The "I built this app in 20 minutes with Claude" posts are everywhere. But I hear very little about code to text and I think it's just as powerful.</p>
+<p>Understanding an existing codebase at breakneck speed is a huge win for developers, but it's an even bigger win for their less technical colleagues. Product managers can now point Claude Code at a repo and within minutes understand the code structure, the technical decisions that were made and the system architecture. What used to take weeks of onboarding meetings, reading outdated wikis and pestering engineers with "how does this bit work?" questions now takes an afternoon.</p>
+<p>This fast tracks a PM's ability to get up to speed in a new team and actually be useful. The number of meetings and back-and-forth iterations needed between engineers and product managers to get aligned on what's possible, what's hard, and what's already built has decreased by about 100x. Nowadays I just ask Claude Code to explain a repo and I can ask as many stupid follow up questions as I want without wasting anyone's time.</p>
+<p>I've specifically seen this play out when scoping new features. Instead of iterating on a vague spec, I can hack multiple options myself, bounce ideas off Claude and educate myself on the potential implementation options. Let's be clear, the hacks are not production code, but enough to demonstrate "here's option A, here's option B, here are the tradeoffs I see" with actual code to point at. The conversation immediately fast forwards because everyone's on the same page and looking at something concrete rather than debating abstractions.</p>
+<p>Every product manager needs to be proficient with Claude Code, Codex or equivalent now. This is the new standard. Not because PMs need to become engineers, but because the gap between "technical enough to be dangerous" and "actually understands the system" has collapsed. The PMs who embrace this will run circles around those who don't. The ones who still rely on engineers to translate everything for them will feel increasingly slow and increasingly redundant.</p>
+<p>Code to text is the quiet revolution.</p>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const hamburger = document.getElementById('hamburger');
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                    sidebar.classList.remove('open');
+                    hamburger.classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

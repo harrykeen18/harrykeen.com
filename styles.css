@@ -130,11 +130,6 @@ body {
     color: #666;
 }
 
-.loading {
-    color: #666;
-    font-style: italic;
-}
-
 .content {
     flex: 1;
     padding: 65px 80px 60px 80px;
