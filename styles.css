@@ -7,7 +7,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #000;
-    background-color: #FFFEF7;
+    background-color: #f2e5da;
     min-height: 100vh;
 }
 
@@ -54,7 +54,7 @@ body {
 
 .sidebar {
     width: 300px;
-    background-color: #FFFEF7;
+    background-color: #f2e5da;
     border-right: 1px solid #000;
     padding: 40px 20px;
     position: sticky;
@@ -112,11 +112,11 @@ body {
 }
 
 .blog-link:hover {
-    background-color: #f5f5f5;
+    background-color: #e8d5c4;
 }
 
 .blog-link.active {
-    background-color: #e8e8e8;
+    background-color: #ddc7b3;
 }
 
 .blog-title {
