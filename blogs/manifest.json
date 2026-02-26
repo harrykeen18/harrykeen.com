@@ -17,13 +17,18 @@
     },
     {
       "filename": "build-vs-buy-llm-era.md",
-      "title": "Is the build vs. buy for software now dead?",
+      "title": "Is build vs. buy for software now dead?",
       "date": "2026-01-15"
     },
     {
       "filename": "new-pm-paradigm.md",
       "title": "The new product management paradigm",
       "date": "2026-02-23"
+    },
+    {
+      "filename": "claude-financial-model-skill.md",
+      "title": "A Claude Skill to Generate Investor-Ready Financial Models",
+      "date": "2026-02-26"
     }
   ]
 }
