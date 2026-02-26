@@ -1,5 +1,3 @@
-# Why I Built a Claude Skill to Generate Investor-Ready Financial Models
-
 Through building my own business and more recently advising other tech startups in the UK, I've built a lot of financial models. Dozens. And the thing I keep coming back to is that a good financial model underpins everything.
 
 It underpins your own strategic decision making as a founder. It underpins how you communicate your plan to investors, to your board, to your team. It forces you to answer the questions you'd rather leave vague: when do we run out of money? How many customers do we actually need? What happens if revenue takes three months longer than we think?
