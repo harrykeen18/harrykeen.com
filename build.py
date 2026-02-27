@@ -117,7 +117,7 @@ def main():
     # Sort posts newest first
     posts = sorted(manifest["posts"], key=lambda p: p["date"], reverse=True)
 
-    md = markdown.Markdown()
+    md = markdown.Markdown(extensions=["tables"])
 
     # Create posts directory
     posts_dir = os.path.join(base_dir, "posts")

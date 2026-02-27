@@ -23,12 +23,17 @@
     {
       "filename": "new-pm-paradigm.md",
       "title": "The new product management paradigm",
-      "date": "2026-02-23"
+      "date": "2026-02-10"
     },
     {
       "filename": "claude-financial-model-skill.md",
       "title": "A Claude Skill to generate investor-ready financial models",
-      "date": "2026-02-26"
+      "date": "2026-02-20"
+    },
+    {
+      "filename": "nhs-mcp.md",
+      "title": "Proper AI health advice - NHS MCP",
+      "date": "2026-02-27"
     }
   ]
 }
