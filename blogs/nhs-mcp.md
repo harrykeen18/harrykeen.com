@@ -1,4 +1,18 @@
-I find it difficult to trust health advice from AI, but I sure do trust the NHS. So I built this MCP server that forces the LLM to give you trusted and professional health advice rather than sourcing information from random websites on the internet. It provides access to NHS health information — conditions, medicines, symptoms, treatments, and more. Backed by a SQLite database with full-text search across 900+ NHS pages.
+I find it difficult to trust health advice from AI. The training data is inevitably flawed given health care information on the internet is wildly varied in quality, definitely biased and also out of date as soon as the model is released. Their web search functions will suffer from similar problems. Anthropic and OpenAI also don't really trust their AI's either. Anthropic classifies medical advice as a High-Risk Use Cases and:
+
+> we require that you implement these additional safety measures: Human-in-the-loop: When using our products or services to provide advice, recommendations, or in subjective decision-making directly affecting individuals or consumers, a qualified professional in that field must review the content or decision prior to dissemination or finalization. You or your organization are responsible for the accuracy and appropriateness of that information...
+
+OpenAI literally prohibits using ChatGPT for:
+
+> "tailored advice that requires a license, such as legal or medical advice, without appropriate involvement by a licensed professional"
+
+Their policy also bans:
+
+> "automation of high-stakes decisions in sensitive areas without human review" in domains including medical activities.
+
+## How can we solve this?
+
+Well, I sure do trust the NHS. So I built this MCP server that forces the LLM to use trusted and professional health guidance rather than sourcing information from random websites on the internet. It provides access to NHS health information — conditions, medicines, symptoms, treatments, and more. Backed by a SQLite database with full-text search across 900+ NHS pages.
 
 [Check it out on Github here](https://github.com/harrykeen18/nhs-data-mcp-server)
 
