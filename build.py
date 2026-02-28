@@ -15,7 +15,7 @@ TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>{title}</title>
     <link rel="stylesheet" href="{css_path}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,15 +50,32 @@ TEMPLATE = """<!DOCTYPE html>
     <script>
         const sidebar = document.getElementById('sidebar');
         const hamburger = document.getElementById('hamburger');
+        let scrollY = 0;
+        function openSidebar() {{
+            scrollY = window.scrollY;
+            sidebar.classList.add('open');
+            hamburger.classList.add('active');
+            document.body.classList.add('sidebar-open');
+            document.body.style.top = `-${{scrollY}}px`;
+        }}
+        function closeSidebar() {{
+            sidebar.classList.remove('open');
+            hamburger.classList.remove('active');
+            document.body.classList.remove('sidebar-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollY);
+        }}
         hamburger.addEventListener('click', () => {{
-            sidebar.classList.toggle('open');
-            hamburger.classList.toggle('active');
+            if (sidebar.classList.contains('open')) {{
+                closeSidebar();
+            }} else {{
+                openSidebar();
+            }}
         }});
         document.addEventListener('click', (e) => {{
             if (window.innerWidth <= 768) {{
                 if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {{
-                    sidebar.classList.remove('open');
-                    hamburger.classList.remove('active');
+                    closeSidebar();
                 }}
             }}
         }});

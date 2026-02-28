@@ -258,18 +258,32 @@ body {
 
     .sidebar {
         position: fixed;
-        left: -100%;
         top: 0;
+        left: 0;
         width: 80%;
         max-width: 300px;
         height: 100vh;
-        transition: left 0.3s ease;
+        height: 100dvh;
         z-index: 999;
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        background-color: #f2e5da;
+        padding-top: calc(40px + env(safe-area-inset-top));
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
     }
 
     .sidebar.open {
-        left: 0;
+        transform: translateX(0);
+    }
+
+    body.sidebar-open {
+        position: fixed;
+        overflow: hidden;
+        width: 100%;
+        touch-action: none;
+        -webkit-overflow-scrolling: auto;
+        overscroll-behavior: none;
     }
 
     .container {
